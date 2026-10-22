@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Formulir pendaftaran pelanggan RumahKita.">
+    <meta name="keywords" content="kontak, pendaftaran, RumahKita">
+    <meta name="author" content="RumahKita">
+
+    <title>Kontak - RumahKita</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+    <link rel="stylesheet" href="style_1.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">RumahKita</div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Formulir -->
+    <main class="halaman-kontak">
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Formulir Pendaftaran Pelanggan</legend>
+
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama"
+                       placeholder="Masukkan nama lengkap" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       placeholder="nama@email.com" required>
+
+                <label for="telepon">Nomor Telepon</label>
+                <input type="tel" id="telepon" name="telepon"
+                       placeholder="08xxxxxxxxxx">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       minlength="8" placeholder="Minimal 8 karakter">
+
+                <label for="tanggal">Tanggal Lahir</label>
+                <input type="date" id="tanggal" name="tanggal">
+
+                <label for="kodepos">Kode Pos</label>
+                <input type="number" id="kodepos" name="kodepos"
+                       placeholder="Masukkan kode pos">
+
+                <label for="kota">Pilihan Kota</label>
+                <select id="kota" name="kota">
+                    <option value="">Pilih kota</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Bandung">Bandung</option>
+                    <option value="Semarang">Semarang</option>
+                    <option value="Yogyakarta">Yogyakarta</option>
+                    <option value="Surabaya">Surabaya</option>
+                </select>
+
+                <p class="label-form">Jenis Kelamin</p>
+
+                <div class="pilihan">
+                    <label>
+                        <input type="radio" name="gender" value="Laki-laki">
+                        Laki-laki
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Perempuan">
+                        Perempuan
+                    </label>
+                </div>
+
+                <div class="pilihan persetujuan">
+                    <label>
+                        <input type="checkbox" name="persetujuan" required>
+                        Saya menyetujui Terms &amp; Conditions.
+                    </label>
+                </div>
+
+                <label for="pesan">Pesan Tambahan</label>
+                <textarea id="pesan" name="pesan" rows="4"
+                          placeholder="Tuliskan pesan Anda"></textarea>
+
+                <input type="submit" value="Kirim Formulir">
+            </fieldset>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RumahKita. Semua hak dilindungi.</p>
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+    </footer>
+
+</body>
+</html>

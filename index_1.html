@@ -1,42 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Toko perlengkapan rumah dengan harga terjangkau.">
+    <meta name="keywords" content="perlengkapan rumah, alat dapur, dekorasi rumah">
+    <meta name="author" content="RumahKita">
+
+    <title>RumahKita - Perlengkapan Rumah</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25694.png">
     <link rel="stylesheet" href="style_1.css">
-    <title>Login</title>
 </head>
 <body>
-    <div class="halaman-login">
-        <div class="form-login">
-            <h1>Masuk ke Akun Anda</h1>
-            <label for="email">Email:</label>
-            <input
-                type="email"
-                placeholder="Alamat Email"
-                required
-                />
-            <label for="password">Password:</label>
-            <input
-                type="password"
-                placeholder="Password"
-                required
-                />
-            <div>
-                <input
-                    type="checkbox"
-                    value="persetujuan"
-                    required
-                    />
-                    <label for="persetujuan">Ingat Saya</label>
-            </div>
-            <input class="tombol-masuk"
-                type="submit"
-                value="Masuk">
-            <p>Belum punya akun? <a href="">Daftar di sini</a></p>
-        </div>
-    </div>
 
-    <script src="Script_1.js"></script>
+    <!-- Header -->
+    <header>
+        <h1 class="logo">RumahKita</h1>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2>Lengkapi Rumah, Percantik Hidup</h2>
+        <p>Temukan perlengkapan rumah berkualitas dengan harga terjangkau.</p>
+        <a href="produk.html" class="tombol">Lihat Produk</a>
+    </section>
+
+    <!-- Produk Unggulan -->
+    <section class="unggulan" id="unggulan">
+        <h2>Produk Unggulan</h2>
+
+        <div class="daftar-produk">
+
+            <div class="kartu-produk">
+                <span class="badge"><strong>Best Seller</strong></span>
+                <img src="https://placehold.co/400x300/e8dfd0/554638?text=Rak+Serbaguna"
+                     alt="Rak serbaguna untuk menyimpan barang rumah">
+                <h3>Rak Serbaguna</h3>
+                <p>Rp150.000</p>
+            </div>
+
+            <div class="kartu-produk">
+                <span class="badge"><strong>Best Seller</strong></span>
+                <img src="https://placehold.co/400x300/dce8df/354c3b?text=Lampu+Meja"
+                     alt="Lampu meja untuk menerangi ruangan">
+                <h3>Lampu Meja</h3>
+                <p>Rp85.000</p>
+            </div>
+
+            <div class="kartu-produk">
+                <span class="badge"><strong>Best Seller</strong></span>
+                <img src="https://placehold.co/400x300/e8dfeb/59425f?text=Vas+Bunga"
+                     alt="Vas bunga untuk dekorasi ruang tamu">
+                <h3>Vas Bunga</h3>
+                <p>Rp45.000</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RumahKita. Semua hak dilindungi.</p>
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+    </footer>
+    
+    <script src="app_1.js"></script>
 </body>
 </html>

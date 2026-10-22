@@ -1,46 +1,454 @@
-.halaman-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f2f5;
+
+/*===index.html===*/
+
+/* 1. Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.form-login {
-  background-color: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9f5;
+    color: #333333;
+    line-height: 1.6;
 }
 
-.form-login h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  text-align: center;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.form-login input {
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+/* 2. Header dan Navigasi */
+header {
+    background-color: #ffffff;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
 }
 
-.tombol-masuk {
-  padding: 10px;
-  background-color: steelblue;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #287653;
 }
 
-.tombol-masuk:hover {
-  background-color: #2a6496;
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #287653;
+}
+
+/* 3. Hero Section */
+.hero {
+    min-height: 60vh;
+    padding: 80px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #e2f0e5, #f8f9f5);
+}
+
+.hero h1 {
+    max-width: 650px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #205c40;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin-top: 15px;
+    background-color: #e6a23c;
+}
+
+.hero p {
+    max-width: 550px;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.tombol {
+    display: inline-block;
+    background-color: #287653;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.tombol:hover {
+    background-color: #1d583d;
+    transform: translateY(-3px);
+}
+
+/* 4. Produk Unggulan */
+.unggulan {
+    padding: 60px 8%;
+}
+
+.unggulan h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #205c40;
+}
+
+.unggulan h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #e6a23c;
+    margin: 10px auto 0;
+}
+
+.daftar-produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.kartu-produk {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kartu-produk:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.kartu-produk img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.kartu-produk h3 {
+    margin: 15px 20px 5px;
+    font-size: 1.1rem;
+}
+
+.kartu-produk p {
+    margin: 0 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #287653;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    background-color: #e6a23c;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+/* 5. Footer */
+footer {
+    background-color: #205c40;
+    color: #ffffff;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer a {
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: #e6a23c;
+}
+
+/* 6. Efek pada Link */
+nav a:nth-child(2) {
+    font-weight: 500;
+}
+
+/* 7. Tampilan Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .daftar-produk {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        min-height: 50vh;
+    }
+}
+
+/* 8. Tampilan HP */
+@media (max-width: 767px) {
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 45vh;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .unggulan {
+        padding: 40px 6%;
+    }
+
+    .daftar-produk {
+        grid-template-columns: 1fr;
+    }
+
+    .kartu-produk img {
+        height: 200px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/*===poduk.html===*/
+
+/* Halaman Produk */
+.halaman-produk {
+    min-height: 70vh;
+    padding: 50px 8%;
+}
+
+.halaman-produk h1 {
+    color: #205c40;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.halaman-produk > p {
+    margin-bottom: 30px;
+}
+
+.halaman-produk h2 {
+    color: #205c40;
+    font-size: 1.3rem;
+    margin: 25px 0 15px;
+}
+
+/* Daftar Kategori */
+.kategori {
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.kategori li {
+    padding: 5px;
+}
+
+.kategori li:nth-child(even) {
+    color: #287653;
+}
+
+/* Tabel */
+.tabel-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #287653;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eaf3ec;
+}
+
+tbody tr:hover {
+    background-color: #d5e8da;
+}
+
+/* Responsif */
+@media (max-width: 767px) {
+    .halaman-produk {
+        padding: 35px 5%;
+    }
+
+    .halaman-produk h1 {
+        font-size: 1.7rem;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/*===kontak.html===*/
+
+/* Halaman Kontak */
+.halaman-kontak {
+    min-height: 80vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e2f0e5, #f8f9f5);
+}
+
+.halaman-kontak form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.halaman-kontak fieldset {
+    border: 1px solid #cbd8ce;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.halaman-kontak legend {
+    padding: 0 10px;
+    color: #205c40;
+    font-weight: 600;
+}
+
+.halaman-kontak label,
+.label-form {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.halaman-kontak input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+.halaman-kontak select,
+.halaman-kontak textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.halaman-kontak input:focus,
+.halaman-kontak select:focus,
+.halaman-kontak textarea:focus {
+    outline: none;
+    border-color: #287653;
+    box-shadow: 0 0 4px rgba(40, 118, 83, 0.3);
+}
+
+.halaman-kontak .pilihan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.halaman-kontak .pilihan label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.halaman-kontak .pilihan input {
+    width: auto;
+}
+
+.halaman-kontak .persetujuan {
+    margin-top: 15px;
+}
+
+.halaman-kontak input[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #287653;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.halaman-kontak input[type="submit"]:hover {
+    background-color: #1d583d;
+}
+
+@media (max-width: 767px) {
+    .halaman-kontak {
+        padding: 25px 12px;
+    }
+
+    .halaman-kontak form {
+        padding: 15px;
+    }
+
+    .halaman-kontak fieldset {
+        padding: 12px;
+    }
 }
